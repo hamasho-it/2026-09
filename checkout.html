@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購入画面 - リハウス</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <a href="./cart.html" class="back-btn">＜</a>
+      <h1>購入画面</h1>
+      <div class="header-placeholder"></div>
+    </header>
+
+    <main class="app-content">
+      <!-- 完了通知表示 -->
+      <div id="purchase-success" class="alert-box" style="display: none;">
+        購入が完了しました！！<br>ご利用ありがとうございました。
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 14px; margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">購入内容</h3>
+        
+        <div class="product-item" style="padding: 6px 0;">
+          <div class="product-info">
+            <div class="product-name">カップヌードル</div>
+          </div>
+          <span>×1 ¥150</span>
+        </div>
+
+        <div class="product-item" style="padding: 6px 0;">
+          <div class="product-info">
+            <div class="product-name">三ツ矢サイダー</div>
+          </div>
+          <span>×1 ¥100</span>
+        </div>
+
+        <div class="product-item" style="padding: 6px 0;">
+          <div class="product-info">
+            <div class="product-name">ホイフル</div>
+          </div>
+          <span>×1 ¥150</span>
+        </div>
+
+        <div style="margin-top: 12px; text-align: right; font-weight: bold; font-size: 16px;">
+          合計金額: ¥400
+        </div>
+      </div>
+
+      <button onclick="document.getElementById('purchase-success').style.display='block'; setTimeout(() => { window.location.href='./index.html'; }, 1500);" class="btn" style="margin-top: 20px;">お支払いをする</button>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">🏠 ホーム</a>
+      <a href="./reserve-date.html" class="nav-item">📅 予約</a>
+      <a href="./cart.html" class="nav-item active">🛒 カート</a>
+      <a href="./mypage.html" class="nav-item">👤 マイページ</a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

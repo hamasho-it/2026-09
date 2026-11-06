@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>予約確認 - リハウス</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <a href="./reserve-time.html" class="back-btn">＜</a>
+      <h1>予約する</h1>
+      <div class="header-placeholder"></div>
+    </header>
+
+    <main class="app-content">
+      <!-- 完了案内（予約後・仮表示） -->
+      <div id="success-alert" class="alert-box" style="display: none;">
+        予約が完了しました！！
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 15px; margin-bottom: 12px; border-bottom: 1px solid #ddd; padding-bottom: 6px;">予約日の最終確認</h3>
+        
+        <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong>選択中のプラン:</strong><br>
+            <span style="font-size: 13px; color: #555;">温泉プラン (¥2,000)</span>
+          </div>
+          <a href="./reserve-plan.html" class="btn btn-secondary" style="width: auto; padding: 4px 10px; font-size: 12px;">変更</a>
+        </div>
+
+        <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong>予約時間:</strong><br>
+            <span style="font-size: 13px; color: #555;">3時間 (10月12日 月)</span>
+          </div>
+          <a href="./reserve-time.html" class="btn btn-secondary" style="width: auto; padding: 4px 10px; font-size: 12px;">選択画面</a>
+        </div>
+      </div>
+
+      <button onclick="document.getElementById('success-alert').style.display='block'; setTimeout(() => { window.location.href='./index.html'; }, 1500);" class="btn" style="margin-top: 20px;">この内容で予約する</button>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">🏠 ホーム</a>
+      <a href="./reserve-date.html" class="nav-item active">📅 予約</a>
+      <a href="./cart.html" class="nav-item">🛒 カート</a>
+      <a href="./mypage.html" class="nav-item">👤 マイページ</a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

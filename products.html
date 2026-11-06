@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品選択 - リハウス</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <a href="./index.html" class="back-btn">＜</a>
+      <h1>購入商品</h1>
+      <div class="header-placeholder"></div>
+    </header>
+
+    <main class="app-content">
+      <!-- タブ -->
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <span style="padding: 6px 12px; background: #333; color: #fff; border-radius: 16px; font-size: 12px;">カップラーメン</span>
+        <span style="padding: 6px 12px; background: #eee; color: #333; border-radius: 16px; font-size: 12px;">飲み物</span>
+        <span style="padding: 6px 12px; background: #eee; color: #333; border-radius: 16px; font-size: 12px;">お菓子</span>
+      </div>
+
+      <!-- 商品リスト -->
+      <div class="product-item">
+        <div class="product-img">
+          <img src="./images/item-noodle.png" alt="item-noodle.png" onerror="this.style.display='none'; this.parentNode.innerText='ラーメン';">
+        </div>
+        <div class="product-info">
+          <div class="product-name">カップヌードル</div>
+          <div class="product-price">¥150</div>
+        </div>
+        <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 12px;">カートへ</button>
+      </div>
+
+      <div class="product-item">
+        <div class="product-img">
+          <img src="./images/item-chips.png" alt="item-chips.png" onerror="this.style.display='none'; this.parentNode.innerText='ポテチ';">
+        </div>
+        <div class="product-info">
+          <div class="product-name">ポテトチップス うすしお</div>
+          <div class="product-price">¥120</div>
+        </div>
+        <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 12px;">カートへ</button>
+      </div>
+
+      <div class="product-item">
+        <div class="product-img">
+          <img src="./images/item-drink.png" alt="item-drink.png" onerror="this.style.display='none'; this.parentNode.innerText='サイダー';">
+        </div>
+        <div class="product-info">
+          <div class="product-name">三ツ矢サイダー</div>
+          <div class="product-price">¥100</div>
+        </div>
+        <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 12px;">カートへ</button>
+      </div>
+
+      <div class="product-item">
+        <div class="product-img">
+          <img src="./images/item-waffle.png" alt="item-waffle.png" onerror="this.style.display='none'; this.parentNode.innerText='ワッフル';">
+        </div>
+        <div class="product-info">
+          <div class="product-name">ホイフル</div>
+          <div class="product-price">¥150</div>
+        </div>
+        <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 12px;">カートへ</button>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <a href="./cart.html" class="btn">お支払い画面へ</a>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">🏠 ホーム</a>
+      <a href="./reserve-date.html" class="nav-item">📅 予約</a>
+      <a href="./cart.html" class="nav-item active">🛒 カート</a>
+      <a href="./mypage.html" class="nav-item">👤 マイページ</a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

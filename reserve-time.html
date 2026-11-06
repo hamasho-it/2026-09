@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>予約・時間選択 - リハウス</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <a href="./reserve-plan.html" class="back-btn">＜</a>
+      <h1>予約する</h1>
+      <div class="header-placeholder"></div>
+    </header>
+
+    <main class="app-content">
+      <p style="font-size: 14px; margin-bottom: 16px; font-weight: bold;">何時間予約しますか？</p>
+
+      <div class="form-group">
+        <label>利用時間選択</label>
+        <select class="form-input">
+          <option>1時間</option>
+          <option>2時間</option>
+          <option selected>3時間</option>
+          <option>4時間</option>
+          <option>5時間</option>
+        </select>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <a href="./reserve-confirm.html" class="btn">次へ</a>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">🏠 ホーム</a>
+      <a href="./reserve-date.html" class="nav-item active">📅 予約</a>
+      <a href="./cart.html" class="nav-item">🛒 カート</a>
+      <a href="./mypage.html" class="nav-item">👤 マイページ</a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

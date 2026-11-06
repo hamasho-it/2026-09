@@ -1,12 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>準備中</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リハウス - ホーム</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body style="font-family:sans-serif;text-align:center;margin-top:30vh">
-<h1>準備中</h1>
-<p>このページは、チームのアプリを公開すると入れ替わります。</p>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-placeholder"></div>
+      <h1>リハウス</h1>
+      <div class="header-placeholder"></div>
+    </header>
+
+    <main class="app-content">
+      <!-- メインバナー -->
+      <div class="img-placeholder">
+        <img src="./images/hero-banner.png" alt="hero-banner.png" onerror="this.style.display='none'; this.parentNode.innerText='[ hero-banner.png ] 店舗内観バナー';">
+      </div>
+
+      <!-- クーポンバナー -->
+      <div class="img-placeholder" style="height: 60px;">
+        <img src="./images/coupon-banner.png" alt="coupon-banner.png" onerror="this.style.display='none'; this.parentNode.innerText='[ coupon-banner.png ] ジュース1本無料クーポン';">
+      </div>
+
+      <!-- ナビゲーションボタン -->
+      <div class="btn-group">
+        <a href="./reserve-date.html" class="btn">予約する</a>
+        <a href="./products.html" class="btn">購入する</a>
+        <a href="./mypage.html" class="btn btn-outline">マイページ</a>
+        <a href="./auth-choice.html" class="btn btn-secondary">新規ログイン</a>
+      </div>
+
+      <!-- 店舗基本情報 -->
+      <div class="card" style="margin-top: 20px;">
+        <h3 style="font-size: 15px; margin-bottom: 8px;">店舗情報</h3>
+        <p style="font-size: 13px; line-height: 1.5;">
+          <strong>店舗名:</strong> リハウス サンプル町店<br>
+          <strong>住所:</strong> 架空県サンプル市サンプル町1-1<br>
+          <strong>営業時間:</strong> 8:00〜24:00 (土日も営業中)
+        </p>
+      </div>
+    </main>
+
+    <!-- 下部ナビゲーション -->
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        ホーム
+      </a>
+      <a href="./reserve-date.html" class="nav-item">
+        <span class="nav-icon">📅</span>
+        予約
+      </a>
+      <a href="./cart.html" class="nav-item">
+        <span class="nav-icon">🛒</span>
+        カート
+      </a>
+      <a href="./mypage.html" class="nav-item">
+        <span class="nav-icon">👤</span>
+        マイページ
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>

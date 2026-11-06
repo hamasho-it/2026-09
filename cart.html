@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カート画面 - リハウス</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <a href="./products.html" class="back-btn">＜</a>
+      <h1>カート画面</h1>
+      <div class="header-placeholder"></div>
+    </header>
+
+    <main class="app-content">
+      <h3 style="font-size: 14px; margin-bottom: 12px;">カート内の商品</h3>
+
+      <div class="product-item">
+        <div class="product-img">
+          <img src="./images/item-noodle.png" alt="item-noodle.png" onerror="this.style.display='none'; this.parentNode.innerText='ラーメン';">
+        </div>
+        <div class="product-info">
+          <div class="product-name">カップヌードル</div>
+          <div class="product-price">¥150 × 1</div>
+        </div>
+        <span>¥150</span>
+      </div>
+
+      <div class="product-item">
+        <div class="product-img">
+          <img src="./images/item-chips.png" alt="item-chips.png" onerror="this.style.display='none'; this.parentNode.innerText='ポテチ';">
+        </div>
+        <div class="product-info">
+          <div class="product-name">ポテトチップス うすしお</div>
+          <div class="product-price">¥120 × 2</div>
+        </div>
+        <span>¥240</span>
+      </div>
+
+      <div style="margin-top: 20px; text-align: right; font-weight: bold; font-size: 16px;">
+        小計: ¥390
+      </div>
+
+      <div style="margin-top: 30px;">
+        <a href="./checkout.html" class="btn">お支払い画面へ</a>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">🏠 ホーム</a>
+      <a href="./reserve-date.html" class="nav-item">📅 予約</a>
+      <a href="./cart.html" class="nav-item active">🛒 カート</a>
+      <a href="./mypage.html" class="nav-item">👤 マイページ</a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
