@@ -20,12 +20,12 @@
       </div>
 
       <div class="card">
-        <h3 style="font-size: 15px; margin-bottom: 12px; border-bottom: 1px solid #ddd; padding-bottom: 6px;">予約内容の最終確認</h3>
+        <h3 style="font-size: 15px; margin-bottom: 12px; border-bottom: 1px solid #dddddd; padding-bottom: 6px;">予約内容の最終確認</h3>
         
         <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
           <div>
             <strong>選択中のプラン:</strong><br>
-            <span style="font-size: 13px; color: #555;">シアタールーム 2時間プラン (¥2,100)</span>
+            <span id="confirm-plan" style="font-size: 13px; color: #555555;">通常プラン / シアタールーム</span>
           </div>
           <a href="./reserve-plan.html" class="btn btn-secondary" style="width: auto; padding: 4px 10px; font-size: 12px;">変更</a>
         </div>
@@ -33,7 +33,7 @@
         <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
           <div>
             <strong>予約時間:</strong><br>
-            <span style="font-size: 13px; color: #555;">2時間 (10月12日 月)</span>
+            <span id="confirm-time" style="font-size: 13px; color: #555555;">2時間 (10月13日 火)</span>
           </div>
           <a href="./reserve-time.html" class="btn btn-secondary" style="width: auto; padding: 4px 10px; font-size: 12px;">選択画面</a>
         </div>
@@ -49,6 +49,17 @@
       <a href="./mypage.html" class="nav-item">👤 マイページ</a>
     </nav>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const selectedTime = localStorage.getItem('rehouse_time') || '2時間';
+      document.getElementById('confirm-time').innerText = selectedTime + ' (10月13日 火)';
+      if (selectedTime.includes('セット')) {
+        document.getElementById('confirm-plan').innerText = 'シアタールーム 2時間プラン (¥2,100)';
+      } else {
+        document.getElementById('confirm-plan').innerText = '通常フリースペースプラン';
+      }
+    });
+  </script>
   <script src="./script.js"></script>
 </body>
 </html>

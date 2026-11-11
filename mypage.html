@@ -11,51 +11,69 @@
     <header class="app-header">
       <a href="./index.html" class="back-btn">＜</a>
       <h1>マイページ</h1>
-      <a href="./settings.html" style="text-decoration: none; color: #333; font-size: 18px; font-weight: bold;">＞</a>
+      <div class="header-placeholder"></div>
     </header>
 
     <main class="app-content">
-      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-        <div class="img-placeholder" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 0;">
-          <img src="./images/icon-user-default.png" alt="icon-user-default.png" onerror="this.style.display='none'; this.parentNode.innerText='アイコン';">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="img-placeholder" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 0;">
+            <img src="./images/icon-user-default.png" alt="icon-user-default.png" onerror="this.style.display='none'; this.parentNode.innerText='アイコン';">
+          </div>
+          <div>
+            <h2 style="font-size: 16px;">利用者A さん</h2>
+            <p style="font-size: 12px; color: #666666;">利用回数 7/10回</p>
+          </div>
         </div>
-        <div>
-          <h2 style="font-size: 16px;">利用者A さん</h2>
-          <p style="font-size: 12px; color: #666;">利用回数: 7 / 10回</p>
-        </div>
+        <a href="./settings.html" class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 12px;">設定</a>
       </div>
 
       <div class="card" style="text-align: center;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
           <span style="font-size: 13px; font-weight: bold;">スタンプカード</span>
-          <span style="font-size: 12px; color: #666;">あと3回！</span>
+          <span style="font-size: 12px; color: #666666;">あと3回！</span>
         </div>
-        <div class="img-placeholder" style="height: 100px;">
-          <img src="./images/stamp-card.png" alt="stamp-card.png" onerror="this.style.display='none'; this.parentNode.innerText='[ stamp-card.png ] スタンプ 7/10 達成';">
+
+        <div class="stamp-grid">
+          <div class="stamp-slot stamped">1</div>
+          <div class="stamp-slot stamped">2</div>
+          <div class="stamp-slot stamped">3</div>
+          <div class="stamp-slot stamped">4</div>
+          <div class="stamp-slot stamped">5</div>
+          <div class="stamp-slot stamped">6</div>
+          <div class="stamp-slot stamped">7</div>
+          <div class="stamp-slot">8</div>
+          <div class="stamp-slot">9</div>
+          <div class="stamp-slot">10</div>
         </div>
-        <p style="font-size: 11px; color: #333; margin-top: 6px;">10回達成で... ジュース1本 or お菓子1個 <strong>無料</strong></p>
+
+        <div class="img-placeholder" style="height: 60px; margin-top: 10px;">
+          <img src="./images/stamp-card.png" alt="stamp-card.png" onerror="this.style.display='none'; this.parentNode.innerText='[ stamp-card.png ] スタンプカード画像';">
+        </div>
+
+        <p style="font-size: 11px; color: #333333; margin-top: 6px;">10回達成で... ジュース1本 or お菓子1個 <strong>無料</strong></p>
       </div>
 
       <div style="margin-top: 16px;">
-        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-bottom: 10px;">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #dddddd; padding-bottom: 4px; margin-bottom: 10px;">
           <span style="font-weight: bold; font-size: 13px;">予約・購入履歴</span>
-          <span style="font-size: 12px; color: #666;">すべて ∨</span>
+          <span style="font-size: 12px; color: #666666;">すべて ∨</span>
         </div>
 
         <div class="product-item" style="padding: 8px 0;">
           <div class="product-info">
-            <div class="product-name">カップヌードル、他</div>
+            <div class="product-name">カップヌードル、他2点</div>
             <div class="product-price">2026/10/10 14:00</div>
           </div>
-          <span style="font-size: 12px; color: #666;">購入完了</span>
+          <span style="font-size: 12px; color: #666666;">購入完了</span>
         </div>
 
         <div class="product-item" style="padding: 8px 0;">
           <div class="product-info">
-            <div class="product-name">コカ・コーラ</div>
+            <div class="product-name">シアタールーム 2時間</div>
             <div class="product-price">2026/10/05 16:30</div>
           </div>
-          <span style="font-size: 12px; color: #666;">購入完了</span>
+          <span style="font-size: 12px; color: #666666;">利用完了</span>
         </div>
       </div>
     </main>

@@ -17,26 +17,12 @@
     <main class="app-content">
       <h3 style="font-size: 14px; margin-bottom: 12px;">カート内の商品</h3>
 
-      <div class="product-item">
-        <div class="product-img"><img src="./images/item-noodle.png" alt="item-noodle" onerror="this.style.display='none'; this.parentNode.innerText='ラーメン';"></div>
-        <div class="product-info"><div class="product-name">カップヌードル</div><div class="product-price">¥150 × 1</div></div>
-        <span>¥150</span>
-      </div>
-
-      <div class="product-item">
-        <div class="product-img"><img src="./images/item-drink.png" alt="item-drink" onerror="this.style.display='none'; this.parentNode.innerText='ドリンク';"></div>
-        <div class="product-info"><div class="product-name">三ツ矢サイダー</div><div class="product-price">¥100 × 1</div></div>
-        <span>¥100</span>
-      </div>
-
-      <div class="product-item">
-        <div class="product-img"><img src="./images/item-snack.png" alt="item-snack" onerror="this.style.display='none'; this.parentNode.innerText='お菓子';"></div>
-        <div class="product-info"><div class="product-name">ホイフル</div><div class="product-price">¥150 × 1</div></div>
-        <span>¥150</span>
+      <div id="cart-items-list">
+        <!-- JSで選択商品と動的に連動 -->
       </div>
 
       <div style="margin-top: 20px; text-align: right; font-weight: bold; font-size: 16px;">
-        小計: ¥400
+        小計: <span id="cart-total-price">¥400</span>
       </div>
 
       <div style="margin-top: 30px;">

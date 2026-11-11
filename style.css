@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f0f0f0;
+  color: #333333;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -27,7 +27,6 @@ body {
   padding-bottom: 70px;
 }
 
-/* ヘッダー */
 .app-header {
   height: 50px;
   background-color: #ffffff;
@@ -44,46 +43,25 @@ body {
 .app-header h1 {
   font-size: 18px;
   font-weight: bold;
-  color: #111;
+  color: #111111;
 }
 
 .back-btn {
   text-decoration: none;
-  color: #333;
+  color: #333333;
   font-size: 20px;
   font-weight: bold;
   width: 30px;
+  display: inline-block;
 }
 
 .header-placeholder {
   width: 30px;
 }
 
-/* メインエリア */
 .app-content {
   padding: 16px;
   flex: 1;
-}
-
-/* フォーム制御 */
-.form-group {
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-  color: #555;
-  font-weight: 500;
-}
-
-.form-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
 }
 
 .btn {
@@ -120,7 +98,26 @@ body {
   margin-top: 16px;
 }
 
-/* カード・画像要素 */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555555;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
 .card {
   background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
@@ -133,7 +130,7 @@ body {
   width: 100%;
   height: 140px;
   background-color: #dcdcdc;
-  color: #666;
+  color: #666666;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,6 +138,9 @@ body {
   border-radius: 6px;
   margin-bottom: 12px;
   overflow: hidden;
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .img-placeholder img {
@@ -149,51 +149,6 @@ body {
   object-fit: cover;
 }
 
-/* 商品リスト */
-.product-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-  align-items: center;
-}
-
-.product-img {
-  width: 60px;
-  height: 60px;
-  background-color: #e0e0e0;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  color: #666;
-  flex-shrink: 0;
-}
-
-.product-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.product-info {
-  flex: 1;
-}
-
-.product-name {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.product-price {
-  font-size: 13px;
-  color: #666;
-  margin-top: 4px;
-}
-
-/* 下部ナビゲーション */
 .bottom-nav {
   position: absolute;
   bottom: 0;
@@ -212,16 +167,82 @@ body {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #666;
+  color: #777777;
   font-size: 11px;
 }
 
 .nav-item.active {
-  color: #000;
+  color: #000000;
   font-weight: bold;
 }
 
-/* カレンダー */
+.product-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eeeeee;
+  align-items: center;
+}
+
+.product-img {
+  width: 60px;
+  height: 60px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #666666;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.product-price {
+  font-size: 13px;
+  color: #666666;
+  margin-top: 4px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.tab-btn {
+  padding: 8px 14px;
+  background-color: #eeeeee;
+  color: #333333;
+  border-radius: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background-color: #333333;
+  color: #ffffff;
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -233,31 +254,32 @@ body {
 .calendar-day-header {
   font-size: 12px;
   font-weight: bold;
-  color: #777;
+  color: #777777;
   padding: 4px 0;
 }
 
 .calendar-cell {
   padding: 8px 0;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   border-radius: 4px;
   font-size: 13px;
   cursor: pointer;
   text-decoration: none;
-  color: #333;
+  color: #333333;
+  display: block;
 }
 
 .calendar-cell.selected {
-  background-color: #333;
-  color: #fff;
+  background-color: #333333;
+  color: #ffffff;
 }
 
 .calendar-status {
   font-size: 10px;
   display: block;
+  margin-top: 2px;
 }
 
-/* お知らせ枠 */
 .alert-box {
   background-color: #e8f5e9;
   border: 1px solid #c8e6c9;
@@ -267,4 +289,31 @@ body {
   margin-bottom: 16px;
   font-size: 14px;
   text-align: center;
+}
+
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.stamp-slot {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px dashed #cccccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+
+.stamp-slot.stamped {
+  background-color: #333333;
+  color: #ffffff;
+  border-style: solid;
+  border-color: #333333;
 }

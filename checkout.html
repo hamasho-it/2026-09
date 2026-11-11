@@ -15,34 +15,33 @@
     </header>
 
     <main class="app-content">
-      <div id="purchase-success" class="alert-box" style="display: none;">
-        購入が完了しました！！<br>ご利用ありがとうございました。
+      <div id="order-complete-msg" class="alert-box" style="display: none;">
+        注文内容が確定しました！<br>ご利用ありがとうございます。
       </div>
 
       <div class="card">
-        <h3 style="font-size: 14px; margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">購入内容</h3>
+        <h3 style="font-size: 14px; margin-bottom: 10px; border-bottom: 1px solid #dddddd; padding-bottom: 4px;">注文内容の一覧</h3>
         
-        <div class="product-item" style="padding: 6px 0;">
-          <div class="product-info"><div class="product-name">カップヌードル</div></div>
-          <span>×1 ¥150</span>
-        </div>
-
-        <div class="product-item" style="padding: 6px 0;">
-          <div class="product-info"><div class="product-name">三ツ矢サイダー</div></div>
-          <span>×1 ¥100</span>
-        </div>
-
-        <div class="product-item" style="padding: 6px 0;">
-          <div class="product-info"><div class="product-name">ホイフル</div></div>
-          <span>×1 ¥150</span>
+        <div id="cart-items-list">
+          <!-- JSで選択商品と連動 -->
         </div>
 
         <div style="margin-top: 12px; text-align: right; font-weight: bold; font-size: 16px;">
-          合計金額: ¥400
+          合計金額: <span id="cart-total-price">¥400</span>
         </div>
       </div>
 
-      <button onclick="document.getElementById('purchase-success').style.display='block'; setTimeout(() => { window.location.href='./index.html'; }, 1500);" class="btn" style="margin-top: 20px;">お支払いをする</button>
+      <div id="step-pay">
+        <button onclick="showConfirmStep()" class="btn" style="margin-top: 20px;">お支払いをする</button>
+      </div>
+
+      <div id="step-confirm" style="display: none;">
+        <button onclick="completeOrder()" class="btn" style="margin-top: 20px; background-color: #2e7d32;">支払いを確定する</button>
+      </div>
+
+      <div id="step-done" style="display: none; margin-top: 20px;">
+        <a href="./index.html" class="btn btn-outline">戻る</a>
+      </div>
     </main>
 
     <nav class="bottom-nav">
@@ -52,6 +51,20 @@
       <a href="./mypage.html" class="nav-item">👤 マイページ</a>
     </nav>
   </div>
+
+  <script>
+    function showConfirmStep() {
+      document.getElementById('step-pay').style.display = 'none';
+      document.getElementById('step-confirm').style.display = 'block';
+    }
+
+    function completeOrder() {
+      document.getElementById('step-confirm').style.display = 'none';
+      document.getElementById('order-complete-msg').style.display = 'block';
+      document.getElementById('step-done').style.display = 'block';
+      localStorage.removeItem('rehouse_cart');
+    }
+  </script>
   <script src="./script.js"></script>
 </body>
 </html>
