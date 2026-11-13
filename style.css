@@ -1,14 +1,43 @@
-/* リハウス アプリ共通スタイル */
+/* リハウス アプリ共通スタイル（レトロポップ・デザイン適用版） */
+:root {
+  /* メインの色（見出し・上の帯） */
+  --color-primary: #1D4ED8;
+  /* 強調の色（主なボタン） */
+  --color-accent: #FF6B00;
+  /* 背景の色 */
+  --color-bg: #FCFBF7;
+  /* 文字の色 */
+  --color-text: #333333;
+
+  /* レトロ・派手な表現のための補助カラー */
+  --color-surface: #FFFFFF;
+  --color-border: #333333;
+  --color-yellow: #FFD600;
+  --color-muted: #555555;
+  --color-disabled: #E5E2D9;
+
+  /* 共通サイズ・装飾 */
+  --font-size-base: 16px;
+  --btn-height: 48px;
+  --radius-round: 9999px;
+  --radius-card: 16px;
+  --shadow-retro: 3px 3px 0px #333333;
+  --shadow-retro-sm: 2px 2px 0px #333333;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background-color: #f0f0f0;
-  color: #333333;
+  background-color: #E8E4D8;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -19,128 +48,196 @@ body {
   width: 100%;
   max-width: 430px;
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--color-bg);
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding-bottom: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  padding-bottom: 88px;
 }
 
+/* 上の帯（メインカラー） */
 .app-header {
-  height: 50px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  min-height: 60px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-bottom: 3px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 8px 16px;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .app-header h1 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #111111;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--color-surface);
+  letter-spacing: 0.04em;
+  text-shadow: 2px 2px 0px var(--color-border);
 }
 
+/* 戻るボタン（スマホで押しやすい44px以上の円形） */
 .back-btn {
   text-decoration: none;
-  color: #333333;
+  color: var(--color-text);
+  background-color: var(--color-yellow);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-retro-sm);
+  border-radius: 50%;
   font-size: 20px;
   font-weight: bold;
-  width: 30px;
-  display: inline-block;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.1s ease;
+}
+
+.back-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
 
 .header-placeholder {
-  width: 30px;
+  width: 44px;
+  flex-shrink: 0;
 }
 
 .app-content {
-  padding: 16px;
+  padding: 20px 16px;
   flex: 1;
 }
 
+/* 見出しスタイル */
+.app-content h2,
+.app-content h3 {
+  color: var(--color-primary);
+  font-weight: 900;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.app-content h2 {
+  font-size: 20px;
+}
+
+.app-content h3 {
+  font-size: 18px;
+}
+
+/* ボタン（角丸・高さ44px以上・強調カラー） */
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
-  padding: 12px;
-  background-color: #333333;
-  color: #ffffff;
+  min-height: var(--btn-height);
+  padding: 12px 20px;
+  background-color: var(--color-accent);
+  color: var(--color-surface);
   text-align: center;
   text-decoration: none;
-  border-radius: 6px;
-  border: none;
-  font-size: 15px;
-  font-weight: bold;
+  border-radius: var(--radius-round);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-retro);
+  font-size: 17px;
+  font-weight: 800;
   cursor: pointer;
-  box-sizing: border-box;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
 }
 
 .btn-secondary {
-  background-color: #e0e0e0;
-  color: #333333;
+  background-color: var(--color-yellow);
+  color: var(--color-text);
 }
 
 .btn-outline {
-  background-color: #ffffff;
-  color: #333333;
-  border: 1px solid #333333;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  box-shadow: 3px 3px 0px var(--color-primary);
+}
+
+.btn-outline:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
 }
 
 .btn-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 20px;
 }
 
+/* フォーム（スマホ入力時に自動ズームされない16px以上を確保） */
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .form-group label {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 6px;
-  color: #555555;
-  font-weight: 500;
+  color: var(--color-primary);
+  font-weight: 800;
 }
 
 .form-input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 6px;
-  font-size: 14px;
+  min-height: 48px;
+  padding: 10px 14px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 16px;
+  box-shadow: var(--shadow-retro-sm);
 }
 
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: #FFFDF5;
+}
+
+/* カード */
 .card {
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 14px;
-  margin-bottom: 16px;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-retro);
+  padding: 16px;
+  margin-bottom: 18px;
 }
 
 .img-placeholder {
   width: 100%;
-  height: 140px;
-  background-color: #dcdcdc;
-  color: #666666;
+  height: 150px;
+  background-color: #EEF2FF;
+  color: var(--color-primary);
+  border: 2px dashed var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
   margin-bottom: 12px;
   overflow: hidden;
   text-align: center;
   padding: 8px;
-  box-sizing: border-box;
 }
 
 .img-placeholder img {
@@ -149,171 +246,18 @@ body {
   object-fit: cover;
 }
 
+/* 下部ナビゲーション（スマホ固定表示・アイコン対応） */
 .bottom-nav {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 60px;
-  background-color: #ffffff;
-  border-top: 1px solid #e0e0e0;
+  max-width: 430px;
+  height: 72px;
+  background-color: var(--color-surface);
+  border-top: 3px solid var(--color-border);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  z-index: 100;
-}
-
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #777777;
-  font-size: 11px;
-}
-
-.nav-item.active {
-  color: #000000;
-  font-weight: bold;
-}
-
-.product-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid #eeeeee;
-  align-items: center;
-}
-
-.product-img {
-  width: 60px;
-  height: 60px;
-  background-color: #e0e0e0;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  color: #666666;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.product-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-info {
-  flex: 1;
-}
-
-.product-name {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.product-price {
-  font-size: 13px;
-  color: #666666;
-  margin-top: 4px;
-}
-
-.category-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-
-.tab-btn {
-  padding: 8px 14px;
-  background-color: #eeeeee;
-  color: #333333;
-  border-radius: 20px;
-  font-size: 13px;
-  text-decoration: none;
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-.tab-btn.active {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
-  text-align: center;
-  margin-top: 12px;
-}
-
-.calendar-day-header {
-  font-size: 12px;
-  font-weight: bold;
-  color: #777777;
-  padding: 4px 0;
-}
-
-.calendar-cell {
-  padding: 8px 0;
-  border: 1px solid #eeeeee;
-  border-radius: 4px;
-  font-size: 13px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #333333;
-  display: block;
-}
-
-.calendar-cell.selected {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-.calendar-status {
-  font-size: 10px;
-  display: block;
-  margin-top: 2px;
-}
-
-.alert-box {
-  background-color: #e8f5e9;
-  border: 1px solid #c8e6c9;
-  color: #2e7d32;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  text-align: center;
-}
-
-.stamp-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin: 12px 0;
-}
-
-.stamp-slot {
-  width: 100%;
-  aspect-ratio: 1;
-  border: 2px dashed #cccccc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
-  color: #aaaaaa;
-}
-
-.stamp-slot.stamped {
-  background-color: #333333;
-  color: #ffffff;
-  border-style: solid;
-  border-color: #333333;
-}
+  padding: 4px 8
